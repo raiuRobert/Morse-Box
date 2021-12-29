@@ -152,7 +152,6 @@ void loop() {
 
   }
 
-
   if (buttonStateClear == HIGH && prestate1 == 0 ) {
     Serial.println(buttonStateClear);
     lcd.clear();
@@ -163,7 +162,6 @@ void loop() {
     prestate1 = 1;
   }
   else if (buttonStateClear == LOW) prestate1 = 0;
-
 
   if (buttonStateReplay == HIGH && prestate3 == 0 ) {
     int i;
@@ -193,7 +191,7 @@ void loop() {
       {
         delay(pause_value * 7); // spacing between words
       }
-
+      
       col_cuv++;
       lcd.noCursor();
 
@@ -207,11 +205,8 @@ void loop() {
     OKspace = 1;
     delay(10);
     prestate2 = 1;
-
   }
   else if (buttonStateSpace == LOW) prestate2 = 0;
-
-
 
   if (OKspace == 1)
   {
@@ -233,8 +228,6 @@ void loop() {
     lcd.setCursor(col, lin);
   }
 
-
-
   lastButtonState = buttonState;  //assigning value to lastbuttonstate
   delay(1);
 }
@@ -244,8 +237,6 @@ void translate(String text) { //more efficient managment of string to letter con
   int i = 0;
   while (database[i] != "E")
   {
-
-
     if (text == ".-.-.-")
     {
       Serial.print(".");        //for break
@@ -273,7 +264,6 @@ void translate(String text) { //more efficient managment of string to letter con
     i++;
     if (database[i] == "END")
     {
-
       lcd.print("");      //if input code doesn't match any letter, print nothing
     }
   }
@@ -281,14 +271,12 @@ void translate(String text) { //more efficient managment of string to letter con
   lcd.noBlink();
   lcd.blink();
 
-
   if (OK == 0) {
     lcd.print((char)letters_and_numbers);
     cuvant = cuvant + (char)letters_and_numbers;
     Serial.println(cuvant);
   }
   else {
-
     lcd.print(letters_and_numbers);
     cuvant = cuvant + letters_and_numbers; OK = 0;
     Serial.println(cuvant);
