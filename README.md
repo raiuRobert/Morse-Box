@@ -4,4 +4,5 @@ Morse code is a method used in telecommunication to encode text characters as st
 
 ![](https://github.com/raiuRobert/Morse-Box/blob/main/Photos/preview.jpg)
 
-This is a box I built which encodes and decodes morse signals.
+This is a box I built which encodes and decodes morse signals. The code will be improved in the future :)
+
